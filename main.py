@@ -36,7 +36,7 @@ score = 0
 a= choice(data)
 b= choice(data)
 while not isFinal:
-  txt = f"Compare A: {a['name']}, a {a['description']}, from {a['country']}. {vs} Compare B: {b['name']}, a {b['description']}, from {b['country']}"
+  txt = f"Compare A: {a['name']}, a {a['description']}, from {a['country']}. {vs} Against B: {b['name']}, a {b['description']}, from {b['country']}"
   if isFirst:
     screenDisplay(txt,0,False,True)
     option = input("Who has more followers? Type 'A' or 'B':").lower()
