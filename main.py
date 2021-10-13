@@ -35,6 +35,10 @@ isFinal = False
 score = 0
 a= choice(data)
 b= choice(data)
+while a==b:
+  b= choice(data)
+
+
 while not isFinal:
   txt = f"Compare A: {a['name']}, a {a['description']}, from {a['country']}. {vs} Against B: {b['name']}, a {b['description']}, from {b['country']}"
   if isFirst:
@@ -46,12 +50,16 @@ while not isFinal:
       print(f"a: {a['follower_count']} and b: {b['follower_count']}")
       a=b
       b=choice(data)
+      while a==b:
+        b= choice(data)
     elif option == "b" and a['follower_count'] < b['follower_count']:
       score += 1
       isFirst = False
       print(f"a: {a['follower_count']} and b: {b['follower_count']}")
       a=b
       b=choice(data)
+      while a==b:
+        b= choice(data)
     else:
       screenDisplay("",score,True,False)
       isFinal = True
@@ -65,12 +73,16 @@ while not isFinal:
       print(f"a: {a['follower_count']} and b: {b['follower_count']}")
       a=b
       b=choice(data)
+      while a==b:
+        b= choice(data)
     elif option == "b" and a['follower_count'] < b['follower_count']:
       score += 1
       isFirst = False
       print(f"a: {a['follower_count']} and b: {b['follower_count']}")
       a=b
       b=choice(data)
+      while a==b:
+        b= choice(data)
     else:
       screenDisplay("",score,True,False)
       isFinal = True
