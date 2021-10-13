@@ -30,15 +30,15 @@ def screenDisplay(myText, score, isFinal,isFirst):
 
 
 def getChoice():
-  return choice(data),choice(data)
+  return choice(data)
 
 
 isFirst = True
 isFinal = False
 score = 0
-
+a= getChoice()
+b= getChoice()
 while not isFinal:
-  a,b = getChoice()
   txt = f"Compare A: {a['name']}, a {a['description']}, from {a['country']}. {vs} Compare B: {b['name']}, a {b['description']}, from {b['country']}"
   if isFirst:
     screenDisplay(txt,0,False,True)
@@ -47,10 +47,14 @@ while not isFinal:
       score += 1
       isFirst = False
       print(f"a: {a['follower_count']} and b: {b['follower_count']}")
+      a=b
+      b=getChoice()
     elif option == "b" and a['follower_count'] < b['follower_count']:
       score += 1
       isFirst = False
       print(f"a: {a['follower_count']} and b: {b['follower_count']}")
+      a=b
+      b=getChoice()
     else:
       screenDisplay("",score,True,False)
       isFinal = True
@@ -62,10 +66,14 @@ while not isFinal:
       score += 1
       isFirst = False
       print(f"a: {a['follower_count']} and b: {b['follower_count']}")
+      a=b
+      b=getChoice()
     elif option == "b" and a['follower_count'] < b['follower_count']:
       score += 1
       isFirst = False
       print(f"a: {a['follower_count']} and b: {b['follower_count']}")
+      a=b
+      b=getChoice()
     else:
       screenDisplay("",score,True,False)
       isFinal = True
